@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Main Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-img (click)="goToMenu('entrante')"
+            src="assets/images/entrantes.jpg">
+          </ion-img>
+          <p text-center>Entrante</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-img (click)="goToMenu('primer plato')"
+            src="assets/images/primer.jpg">
+          </ion-img>
+          <p text-center>Primer Plato</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-img (click)="goToMenu('segundo plato')"
+            src="assets/images/segundo.jpg">
+          </ion-img>
+          <p text-center>Segundo Plato</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-img (click)="goToMenu('postre')" src="assets/images/postre.jpg">
+          </ion-img>
+          <p text-center>Postre</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-list-header>
+      Carro
+    </ion-list-header>
+    <ion-item *ngFor="let detalle of variable1">
+      <ion-label>{{detalle.platoidplato}}</ion-label>
+      <ion-label>{{detalle.nota}}</ion-label>
+      <ion-button (click)="deleteDetail(detalle.iddetalles)"><ion-icon name="trash"></ion-icon>
+        </ion-button>
+    </ion-item>
+    
+  </ion-list>
+  <ion-button (click)="confirmBill()" expand="block">Confirm Cart</ion-button>
+
+
+</ion-content>
